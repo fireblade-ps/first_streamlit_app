@@ -3,7 +3,6 @@ import pandas
 import requests
 import snowflake.connector
  
- 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt").set_index('Fruit')
  
 #app_code
@@ -42,5 +41,5 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rowa)
+streamlit.dataframe(my_data_rows)
 
